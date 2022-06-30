@@ -1,0 +1,87 @@
+.products {
+  width: 100%;
+  &_header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 10px;
+    border-bottom: 1px solid $border-color;
+    &-all {
+      span {
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 24px;
+      }
+    }
+    &-price {
+      font-weight: 700;
+      font-size: 14px;
+      line-height: 24px;
+    }
+  }
+  &_list {
+    height: calc(100vh - 267px);
+    overflow: scroll;
+    .product {
+      margin-top: 19px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid $border-color;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      &_main {
+        display: flex;
+        width: 70%;
+        input {
+          margin-right: 10px;
+        }
+        label {
+          display: flex;
+          margin-right: 10px;
+          width: 100%;
+          max-width: 800px;
+          img {
+            width: 40px;
+            height: 40px;
+            object-fit: cover;
+            border-radius: $border-radius;
+            border: 1px solid $border-color;
+            margin-right: 10px;
+          }
+        }
+        &-body {
+          width: 100%;
+          &-name {
+            width: 100%;
+            display: block;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 24px;
+            color: $productname-color;
+            margin-bottom: 2px;
+          }
+          &-id {
+            width: 100%;
+            display: block;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 15px;
+            color: $productid-color;
+          }
+        }
+      }
+      &_price {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 16px;
+      }
+    }
+  }
+}

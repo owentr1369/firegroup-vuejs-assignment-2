@@ -18,6 +18,7 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  margin-bottom: 17px;
 }
 
 .actions_search {
@@ -92,6 +93,122 @@
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
   background-color: #fafafc;
+}
+
+.products {
+  width: 100%;
+}
+
+.products_header {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #ebebf0;
+}
+
+.products_header-all span {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 24px;
+}
+
+.products_header-price {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 24px;
+}
+
+.products_list {
+  height: calc(100vh - 267px);
+  overflow: scroll;
+}
+
+.products_list .product {
+  margin-top: 19px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #ebebf0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.products_list .product_main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 70%;
+}
+
+.products_list .product_main input {
+  margin-right: 10px;
+}
+
+.products_list .product_main label {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-right: 10px;
+  width: 100%;
+  max-width: 800px;
+}
+
+.products_list .product_main label img {
+  width: 40px;
+  height: 40px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 3px;
+  border: 1px solid #ebebf0;
+  margin-right: 10px;
+}
+
+.products_list .product_main-body {
+  width: 100%;
+}
+
+.products_list .product_main-body-name {
+  width: 100%;
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
+  color: #1c1c28;
+  margin-bottom: 2px;
+}
+
+.products_list .product_main-body-id {
+  width: 100%;
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+  color: #8f90a6;
+}
+
+.products_list .product_price {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
 }
 
 .footer {
