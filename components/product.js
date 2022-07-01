@@ -9,7 +9,7 @@ export default Vue.component("app-product", {
             </div>
             <div class="products_list">
               <div
-                v-for="product in productList"
+                v-for="product in newList"
                 :key="product.id"
                 class="product"
                 @click="addToSeleted"
@@ -36,11 +36,23 @@ export default Vue.component("app-product", {
           </div>`,
   props: ["productList", "searchValue"],
   data() {
-    return {};
+    return {
+      newList: [],
+    };
   },
   methods: {
     addToSeleted: function (e) {
       console.log(e);
+    },
+  },
+  watch: {
+    searchValue() {
+      this.newList = this.productList.filter((product) => {
+        return (
+          product.name.toLowerCase().includes(this.searchValue.toLowerCase()) ||
+          product.id.includes(this.searchValue.toLowerCase())
+        );
+      });
     },
   },
 });
