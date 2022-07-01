@@ -8,6 +8,32 @@
     padding-bottom: 10px;
     border-bottom: 1px solid $border-color;
     &-all {
+      display: flex;
+      align-items: center;
+      input[type="checkbox"] {
+        -webkit-appearance: none;
+        width: 16px;
+        height: 16px;
+        margin-right: 10px;
+        border: 1px solid #c7c9d9;
+        border-radius: $border-radius;
+        &:checked {
+          position: relative;
+          background-color: $main-color;
+          border: none;
+          &::after {
+            content: "";
+            position: absolute;
+            width: 10px;
+            height: 2.5px;
+            border-radius: 1px;
+            background-color: #fff;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+          }
+        }
+      }
       span {
         font-weight: 700;
         font-size: 14px;
@@ -33,9 +59,49 @@
       &_main {
         display: flex;
         width: 70%;
-        input {
+        justify-content: flex-start;
+        .checkbox_container {
           margin-right: 10px;
+          min-width: 16px;
+          max-width: 16px;
+          position: relative;
+          input {
+            -webkit-appearance: none;
+          }
+          .checkmark {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            height: 16px;
+            width: 16px;
+            border: 1px solid #c7c9d9;
+            border-radius: $border-radius;
+            z-index: 2;
+            &::after {
+              content: "";
+              position: absolute;
+              top: 3px;
+              left: 5px;
+              width: 3px;
+              height: 6px;
+              border: solid #fff;
+              border-width: 0 3px 3px 0;
+              transform: rotate(45deg);
+              display: none;
+              z-index: 3;
+            }
+          }
+          input:checked ~ .checkmark {
+            background-color: $main-color;
+            border: none;
+          }
+          input:checked ~ .checkmark:after {
+            display: block;
+          }
         }
+
         label {
           display: flex;
           margin-right: 10px;

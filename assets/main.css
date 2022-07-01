@@ -114,6 +114,43 @@
   border-bottom: 1px solid #ebebf0;
 }
 
+.products_header-all {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.products_header-all input[type="checkbox"] {
+  -webkit-appearance: none;
+  width: 16px;
+  height: 16px;
+  margin-right: 10px;
+  border: 1px solid #c7c9d9;
+  border-radius: 3px;
+}
+
+.products_header-all input[type="checkbox"]:checked {
+  position: relative;
+  background-color: #f65e5d;
+  border: none;
+}
+
+.products_header-all input[type="checkbox"]:checked::after {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 2.5px;
+  border-radius: 1px;
+  background-color: #fff;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
 .products_header-all span {
   font-weight: 700;
   font-size: 14px;
@@ -151,10 +188,58 @@
   display: -ms-flexbox;
   display: flex;
   width: 70%;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
 }
 
-.products_list .product_main input {
+.products_list .product_main .checkbox_container {
   margin-right: 10px;
+  min-width: 16px;
+  max-width: 16px;
+  position: relative;
+}
+
+.products_list .product_main .checkbox_container input {
+  -webkit-appearance: none;
+}
+
+.products_list .product_main .checkbox_container .checkmark {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  height: 16px;
+  width: 16px;
+  border: 1px solid #c7c9d9;
+  border-radius: 3px;
+  z-index: 2;
+}
+
+.products_list .product_main .checkbox_container .checkmark::after {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 5px;
+  width: 3px;
+  height: 6px;
+  border: solid #fff;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  display: none;
+  z-index: 3;
+}
+
+.products_list .product_main .checkbox_container input:checked ~ .checkmark {
+  background-color: #f65e5d;
+  border: none;
+}
+
+.products_list .product_main .checkbox_container input:checked ~ .checkmark:after {
+  display: block;
 }
 
 .products_list .product_main label {
