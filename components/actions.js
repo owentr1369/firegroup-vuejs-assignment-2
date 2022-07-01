@@ -1,4 +1,4 @@
-Vue.component("app-actions", {
+export default Vue.component("app-actions", {
   template: ` <div class="actions">
             <div class="actions_search">
               <img src="./assets/svg/search.svg" alt="" class="actions_search-icon"/>

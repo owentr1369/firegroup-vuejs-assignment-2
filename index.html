@@ -18,401 +18,34 @@
           <div class="products">
             <div class="products_header">
               <div class="products_header-all">
-                <input type="checkbox" name="" id="" />
+                <input type="checkbox" id="" />
                 <span>Product</span>
               </div>
               <span class="products_header-price">Price</span>
             </div>
             <div class="products_list">
-              <div class="product">
+              <div
+                v-for="product in productList"
+                :key="product.id"
+                class="product"
+              >
                 <div class="product_main">
-                  <label for="3" class="checkbox_container">
-                    <input type="checkbox" name="" id="3" />
+                  <label :for="product.id" class="checkbox_container">
+                    <input type="checkbox" name="" :id="product.id" />
                     <span class="checkmark"></span>
                   </label>
 
-                  <label for="3">
-                    <img
-                      src="https://cdn.shopify.com/s/files/1/0048/0031/5427/products/2019-New-Jackets-Parka-Men-Hot-Sale-Quality-Autumn-Winter-Warm-Outwear-Brand-Slim-Mens-Coats.jpg_640x640_6a7cbfee-74c1-4cf0-8a95-e94717f64531.jpg?v=1596813582&width=550%20550w,//cdn.shopify.com/s/files/1/0048/0031/5427/products/2019-New-Jackets-Parka-Men-Hot-Sale-Quality-Autumn-Winter-Warm-Outwear-Brand-Slim-Mens-Coats.jpg_640x640_6a7cbfee-74c1-4cf0-8a95-e94717f64531.jpg?v=1596813582%20640w"
-                      alt=""
-                    />
+                  <label :for="product.id">
+                    <img :src="product.image" :alt="product.name" />
                     <div class="product_main-body">
                       <span class="product_main-body-name"
-                        >2019 New Fashion Men Hoodies Suits Brand Tracksuit
-                        Men/Women Sweatshirts+Sweatpants Autumn Winter Fleece
-                        Hooded Pullover</span
+                        >{{product.name}}</span
                       >
-                      <span class="product_main-body-id"
-                        >92b09290b9207261abf32aa234bbc8bf</span
-                      >
+                      <span class="product_main-body-id">{{product.id}}</span>
                     </div>
                   </label>
                 </div>
-                <span class="product_price">$300</span>
-              </div>
-              <div class="product">
-                <div class="product_main">
-                  <label for="3" class="checkbox_container">
-                    <input type="checkbox" name="" id="3" />
-                    <span class="checkmark"></span>
-                  </label>
-
-                  <label for="3">
-                    <img
-                      src="https://cdn.shopify.com/s/files/1/0048/0031/5427/products/2019-New-Jackets-Parka-Men-Hot-Sale-Quality-Autumn-Winter-Warm-Outwear-Brand-Slim-Mens-Coats.jpg_640x640_6a7cbfee-74c1-4cf0-8a95-e94717f64531.jpg?v=1596813582&width=550%20550w,//cdn.shopify.com/s/files/1/0048/0031/5427/products/2019-New-Jackets-Parka-Men-Hot-Sale-Quality-Autumn-Winter-Warm-Outwear-Brand-Slim-Mens-Coats.jpg_640x640_6a7cbfee-74c1-4cf0-8a95-e94717f64531.jpg?v=1596813582%20640w"
-                      alt=""
-                    />
-                    <div class="product_main-body">
-                      <span class="product_main-body-name"
-                        >2019 New Fashion Men Hoodies Suits Brand Tracksuit
-                        Men/Women Sweatshirts+Sweatpants Autumn Winter Fleece
-                        Hooded Pullover</span
-                      >
-                      <span class="product_main-body-id"
-                        >92b09290b9207261abf32aa234bbc8bf</span
-                      >
-                    </div>
-                  </label>
-                </div>
-                <span class="product_price">$300</span>
-              </div>
-              <div class="product">
-                <div class="product_main">
-                  <label for="3" class="checkbox_container">
-                    <input type="checkbox" name="" id="3" />
-                    <span class="checkmark"></span>
-                  </label>
-
-                  <label for="3">
-                    <img
-                      src="https://cdn.shopify.com/s/files/1/0048/0031/5427/products/2019-New-Jackets-Parka-Men-Hot-Sale-Quality-Autumn-Winter-Warm-Outwear-Brand-Slim-Mens-Coats.jpg_640x640_6a7cbfee-74c1-4cf0-8a95-e94717f64531.jpg?v=1596813582&width=550%20550w,//cdn.shopify.com/s/files/1/0048/0031/5427/products/2019-New-Jackets-Parka-Men-Hot-Sale-Quality-Autumn-Winter-Warm-Outwear-Brand-Slim-Mens-Coats.jpg_640x640_6a7cbfee-74c1-4cf0-8a95-e94717f64531.jpg?v=1596813582%20640w"
-                      alt=""
-                    />
-                    <div class="product_main-body">
-                      <span class="product_main-body-name"
-                        >2019 New Fashion Men Hoodies Suits Brand Tracksuit
-                        Men/Women Sweatshirts+Sweatpants Autumn Winter Fleece
-                        Hooded Pullover</span
-                      >
-                      <span class="product_main-body-id"
-                        >92b09290b9207261abf32aa234bbc8bf</span
-                      >
-                    </div>
-                  </label>
-                </div>
-                <span class="product_price">$300</span>
-              </div>
-              <div class="product">
-                <div class="product_main">
-                  <label for="3" class="checkbox_container">
-                    <input type="checkbox" name="" id="3" />
-                    <span class="checkmark"></span>
-                  </label>
-
-                  <label for="3">
-                    <img
-                      src="https://cdn.shopify.com/s/files/1/0048/0031/5427/products/2019-New-Jackets-Parka-Men-Hot-Sale-Quality-Autumn-Winter-Warm-Outwear-Brand-Slim-Mens-Coats.jpg_640x640_6a7cbfee-74c1-4cf0-8a95-e94717f64531.jpg?v=1596813582&width=550%20550w,//cdn.shopify.com/s/files/1/0048/0031/5427/products/2019-New-Jackets-Parka-Men-Hot-Sale-Quality-Autumn-Winter-Warm-Outwear-Brand-Slim-Mens-Coats.jpg_640x640_6a7cbfee-74c1-4cf0-8a95-e94717f64531.jpg?v=1596813582%20640w"
-                      alt=""
-                    />
-                    <div class="product_main-body">
-                      <span class="product_main-body-name"
-                        >2019 New Fashion Men Hoodies Suits Brand Tracksuit
-                        Men/Women Sweatshirts+Sweatpants Autumn Winter Fleece
-                        Hooded Pullover</span
-                      >
-                      <span class="product_main-body-id"
-                        >92b09290b9207261abf32aa234bbc8bf</span
-                      >
-                    </div>
-                  </label>
-                </div>
-                <span class="product_price">$300</span>
-              </div>
-              <div class="product">
-                <div class="product_main">
-                  <label for="3" class="checkbox_container">
-                    <input type="checkbox" name="" id="3" />
-                    <span class="checkmark"></span>
-                  </label>
-
-                  <label for="3">
-                    <img
-                      src="https://cdn.shopify.com/s/files/1/0048/0031/5427/products/2019-New-Jackets-Parka-Men-Hot-Sale-Quality-Autumn-Winter-Warm-Outwear-Brand-Slim-Mens-Coats.jpg_640x640_6a7cbfee-74c1-4cf0-8a95-e94717f64531.jpg?v=1596813582&width=550%20550w,//cdn.shopify.com/s/files/1/0048/0031/5427/products/2019-New-Jackets-Parka-Men-Hot-Sale-Quality-Autumn-Winter-Warm-Outwear-Brand-Slim-Mens-Coats.jpg_640x640_6a7cbfee-74c1-4cf0-8a95-e94717f64531.jpg?v=1596813582%20640w"
-                      alt=""
-                    />
-                    <div class="product_main-body">
-                      <span class="product_main-body-name"
-                        >2019 New Fashion Men Hoodies Suits Brand Tracksuit
-                        Men/Women Sweatshirts+Sweatpants Autumn Winter Fleece
-                        Hooded Pullover</span
-                      >
-                      <span class="product_main-body-id"
-                        >92b09290b9207261abf32aa234bbc8bf</span
-                      >
-                    </div>
-                  </label>
-                </div>
-                <span class="product_price">$300</span>
-              </div>
-              <div class="product">
-                <div class="product_main">
-                  <label for="3" class="checkbox_container">
-                    <input type="checkbox" name="" id="3" />
-                    <span class="checkmark"></span>
-                  </label>
-
-                  <label for="3">
-                    <img
-                      src="https://cdn.shopify.com/s/files/1/0048/0031/5427/products/2019-New-Jackets-Parka-Men-Hot-Sale-Quality-Autumn-Winter-Warm-Outwear-Brand-Slim-Mens-Coats.jpg_640x640_6a7cbfee-74c1-4cf0-8a95-e94717f64531.jpg?v=1596813582&width=550%20550w,//cdn.shopify.com/s/files/1/0048/0031/5427/products/2019-New-Jackets-Parka-Men-Hot-Sale-Quality-Autumn-Winter-Warm-Outwear-Brand-Slim-Mens-Coats.jpg_640x640_6a7cbfee-74c1-4cf0-8a95-e94717f64531.jpg?v=1596813582%20640w"
-                      alt=""
-                    />
-                    <div class="product_main-body">
-                      <span class="product_main-body-name"
-                        >2019 New Fashion Men Hoodies Suits Brand Tracksuit
-                        Men/Women Sweatshirts+Sweatpants Autumn Winter Fleece
-                        Hooded Pullover</span
-                      >
-                      <span class="product_main-body-id"
-                        >92b09290b9207261abf32aa234bbc8bf</span
-                      >
-                    </div>
-                  </label>
-                </div>
-                <span class="product_price">$300</span>
-              </div>
-              <div class="product">
-                <div class="product_main">
-                  <label for="3" class="checkbox_container">
-                    <input type="checkbox" name="" id="3" />
-                    <span class="checkmark"></span>
-                  </label>
-
-                  <label for="3">
-                    <img
-                      src="https://cdn.shopify.com/s/files/1/0048/0031/5427/products/2019-New-Jackets-Parka-Men-Hot-Sale-Quality-Autumn-Winter-Warm-Outwear-Brand-Slim-Mens-Coats.jpg_640x640_6a7cbfee-74c1-4cf0-8a95-e94717f64531.jpg?v=1596813582&width=550%20550w,//cdn.shopify.com/s/files/1/0048/0031/5427/products/2019-New-Jackets-Parka-Men-Hot-Sale-Quality-Autumn-Winter-Warm-Outwear-Brand-Slim-Mens-Coats.jpg_640x640_6a7cbfee-74c1-4cf0-8a95-e94717f64531.jpg?v=1596813582%20640w"
-                      alt=""
-                    />
-                    <div class="product_main-body">
-                      <span class="product_main-body-name"
-                        >2019 New Fashion Men Hoodies Suits Brand Tracksuit
-                        Men/Women Sweatshirts+Sweatpants Autumn Winter Fleece
-                        Hooded Pullover</span
-                      >
-                      <span class="product_main-body-id"
-                        >92b09290b9207261abf32aa234bbc8bf</span
-                      >
-                    </div>
-                  </label>
-                </div>
-                <span class="product_price">$300</span>
-              </div>
-              <div class="product">
-                <div class="product_main">
-                  <label for="3" class="checkbox_container">
-                    <input type="checkbox" name="" id="3" />
-                    <span class="checkmark"></span>
-                  </label>
-
-                  <label for="3">
-                    <img
-                      src="https://cdn.shopify.com/s/files/1/0048/0031/5427/products/2019-New-Jackets-Parka-Men-Hot-Sale-Quality-Autumn-Winter-Warm-Outwear-Brand-Slim-Mens-Coats.jpg_640x640_6a7cbfee-74c1-4cf0-8a95-e94717f64531.jpg?v=1596813582&width=550%20550w,//cdn.shopify.com/s/files/1/0048/0031/5427/products/2019-New-Jackets-Parka-Men-Hot-Sale-Quality-Autumn-Winter-Warm-Outwear-Brand-Slim-Mens-Coats.jpg_640x640_6a7cbfee-74c1-4cf0-8a95-e94717f64531.jpg?v=1596813582%20640w"
-                      alt=""
-                    />
-                    <div class="product_main-body">
-                      <span class="product_main-body-name"
-                        >2019 New Fashion Men Hoodies Suits Brand Tracksuit
-                        Men/Women Sweatshirts+Sweatpants Autumn Winter Fleece
-                        Hooded Pullover</span
-                      >
-                      <span class="product_main-body-id"
-                        >92b09290b9207261abf32aa234bbc8bf</span
-                      >
-                    </div>
-                  </label>
-                </div>
-                <span class="product_price">$300</span>
-              </div>
-              <div class="product">
-                <div class="product_main">
-                  <label for="3" class="checkbox_container">
-                    <input type="checkbox" name="" id="3" />
-                    <span class="checkmark"></span>
-                  </label>
-
-                  <label for="3">
-                    <img
-                      src="https://cdn.shopify.com/s/files/1/0048/0031/5427/products/2019-New-Jackets-Parka-Men-Hot-Sale-Quality-Autumn-Winter-Warm-Outwear-Brand-Slim-Mens-Coats.jpg_640x640_6a7cbfee-74c1-4cf0-8a95-e94717f64531.jpg?v=1596813582&width=550%20550w,//cdn.shopify.com/s/files/1/0048/0031/5427/products/2019-New-Jackets-Parka-Men-Hot-Sale-Quality-Autumn-Winter-Warm-Outwear-Brand-Slim-Mens-Coats.jpg_640x640_6a7cbfee-74c1-4cf0-8a95-e94717f64531.jpg?v=1596813582%20640w"
-                      alt=""
-                    />
-                    <div class="product_main-body">
-                      <span class="product_main-body-name"
-                        >2019 New Fashion Men Hoodies Suits Brand Tracksuit
-                        Men/Women Sweatshirts+Sweatpants Autumn Winter Fleece
-                        Hooded Pullover</span
-                      >
-                      <span class="product_main-body-id"
-                        >92b09290b9207261abf32aa234bbc8bf</span
-                      >
-                    </div>
-                  </label>
-                </div>
-                <span class="product_price">$300</span>
-              </div>
-              <div class="product">
-                <div class="product_main">
-                  <label for="3" class="checkbox_container">
-                    <input type="checkbox" name="" id="3" />
-                    <span class="checkmark"></span>
-                  </label>
-
-                  <label for="3">
-                    <img
-                      src="https://cdn.shopify.com/s/files/1/0048/0031/5427/products/2019-New-Jackets-Parka-Men-Hot-Sale-Quality-Autumn-Winter-Warm-Outwear-Brand-Slim-Mens-Coats.jpg_640x640_6a7cbfee-74c1-4cf0-8a95-e94717f64531.jpg?v=1596813582&width=550%20550w,//cdn.shopify.com/s/files/1/0048/0031/5427/products/2019-New-Jackets-Parka-Men-Hot-Sale-Quality-Autumn-Winter-Warm-Outwear-Brand-Slim-Mens-Coats.jpg_640x640_6a7cbfee-74c1-4cf0-8a95-e94717f64531.jpg?v=1596813582%20640w"
-                      alt=""
-                    />
-                    <div class="product_main-body">
-                      <span class="product_main-body-name"
-                        >2019 New Fashion Men Hoodies Suits Brand Tracksuit
-                        Men/Women Sweatshirts+Sweatpants Autumn Winter Fleece
-                        Hooded Pullover</span
-                      >
-                      <span class="product_main-body-id"
-                        >92b09290b9207261abf32aa234bbc8bf</span
-                      >
-                    </div>
-                  </label>
-                </div>
-                <span class="product_price">$300</span>
-              </div>
-              <div class="product">
-                <div class="product_main">
-                  <label for="3" class="checkbox_container">
-                    <input type="checkbox" name="" id="3" />
-                    <span class="checkmark"></span>
-                  </label>
-
-                  <label for="3">
-                    <img
-                      src="https://cdn.shopify.com/s/files/1/0048/0031/5427/products/2019-New-Jackets-Parka-Men-Hot-Sale-Quality-Autumn-Winter-Warm-Outwear-Brand-Slim-Mens-Coats.jpg_640x640_6a7cbfee-74c1-4cf0-8a95-e94717f64531.jpg?v=1596813582&width=550%20550w,//cdn.shopify.com/s/files/1/0048/0031/5427/products/2019-New-Jackets-Parka-Men-Hot-Sale-Quality-Autumn-Winter-Warm-Outwear-Brand-Slim-Mens-Coats.jpg_640x640_6a7cbfee-74c1-4cf0-8a95-e94717f64531.jpg?v=1596813582%20640w"
-                      alt=""
-                    />
-                    <div class="product_main-body">
-                      <span class="product_main-body-name"
-                        >2019 New Fashion Men Hoodies Suits Brand Tracksuit
-                        Men/Women Sweatshirts+Sweatpants Autumn Winter Fleece
-                        Hooded Pullover</span
-                      >
-                      <span class="product_main-body-id"
-                        >92b09290b9207261abf32aa234bbc8bf</span
-                      >
-                    </div>
-                  </label>
-                </div>
-                <span class="product_price">$300</span>
-              </div>
-              <div class="product">
-                <div class="product_main">
-                  <label for="3" class="checkbox_container">
-                    <input type="checkbox" name="" id="3" />
-                    <span class="checkmark"></span>
-                  </label>
-
-                  <label for="3">
-                    <img
-                      src="https://cdn.shopify.com/s/files/1/0048/0031/5427/products/2019-New-Jackets-Parka-Men-Hot-Sale-Quality-Autumn-Winter-Warm-Outwear-Brand-Slim-Mens-Coats.jpg_640x640_6a7cbfee-74c1-4cf0-8a95-e94717f64531.jpg?v=1596813582&width=550%20550w,//cdn.shopify.com/s/files/1/0048/0031/5427/products/2019-New-Jackets-Parka-Men-Hot-Sale-Quality-Autumn-Winter-Warm-Outwear-Brand-Slim-Mens-Coats.jpg_640x640_6a7cbfee-74c1-4cf0-8a95-e94717f64531.jpg?v=1596813582%20640w"
-                      alt=""
-                    />
-                    <div class="product_main-body">
-                      <span class="product_main-body-name"
-                        >2019 New Fashion Men Hoodies Suits Brand Tracksuit
-                        Men/Women Sweatshirts+Sweatpants Autumn Winter Fleece
-                        Hooded Pullover</span
-                      >
-                      <span class="product_main-body-id"
-                        >92b09290b9207261abf32aa234bbc8bf</span
-                      >
-                    </div>
-                  </label>
-                </div>
-                <span class="product_price">$300</span>
-              </div>
-              <div class="product">
-                <div class="product_main">
-                  <label for="3" class="checkbox_container">
-                    <input type="checkbox" name="" id="3" />
-                    <span class="checkmark"></span>
-                  </label>
-
-                  <label for="3">
-                    <img
-                      src="https://cdn.shopify.com/s/files/1/0048/0031/5427/products/2019-New-Jackets-Parka-Men-Hot-Sale-Quality-Autumn-Winter-Warm-Outwear-Brand-Slim-Mens-Coats.jpg_640x640_6a7cbfee-74c1-4cf0-8a95-e94717f64531.jpg?v=1596813582&width=550%20550w,//cdn.shopify.com/s/files/1/0048/0031/5427/products/2019-New-Jackets-Parka-Men-Hot-Sale-Quality-Autumn-Winter-Warm-Outwear-Brand-Slim-Mens-Coats.jpg_640x640_6a7cbfee-74c1-4cf0-8a95-e94717f64531.jpg?v=1596813582%20640w"
-                      alt=""
-                    />
-                    <div class="product_main-body">
-                      <span class="product_main-body-name"
-                        >2019 New Fashion Men Hoodies Suits Brand Tracksuit
-                        Men/Women Sweatshirts+Sweatpants Autumn Winter Fleece
-                        Hooded Pullover</span
-                      >
-                      <span class="product_main-body-id"
-                        >92b09290b9207261abf32aa234bbc8bf</span
-                      >
-                    </div>
-                  </label>
-                </div>
-                <span class="product_price">$300</span>
-              </div>
-              <div class="product">
-                <div class="product_main">
-                  <label for="3" class="checkbox_container">
-                    <input type="checkbox" name="" id="3" />
-                    <span class="checkmark"></span>
-                  </label>
-
-                  <label for="3">
-                    <img
-                      src="https://cdn.shopify.com/s/files/1/0048/0031/5427/products/2019-New-Jackets-Parka-Men-Hot-Sale-Quality-Autumn-Winter-Warm-Outwear-Brand-Slim-Mens-Coats.jpg_640x640_6a7cbfee-74c1-4cf0-8a95-e94717f64531.jpg?v=1596813582&width=550%20550w,//cdn.shopify.com/s/files/1/0048/0031/5427/products/2019-New-Jackets-Parka-Men-Hot-Sale-Quality-Autumn-Winter-Warm-Outwear-Brand-Slim-Mens-Coats.jpg_640x640_6a7cbfee-74c1-4cf0-8a95-e94717f64531.jpg?v=1596813582%20640w"
-                      alt=""
-                    />
-                    <div class="product_main-body">
-                      <span class="product_main-body-name"
-                        >2019 New Fashion Men Hoodies Suits Brand Tracksuit
-                        Men/Women Sweatshirts+Sweatpants Autumn Winter Fleece
-                        Hooded Pullover</span
-                      >
-                      <span class="product_main-body-id"
-                        >92b09290b9207261abf32aa234bbc8bf</span
-                      >
-                    </div>
-                  </label>
-                </div>
-                <span class="product_price">$300</span>
-              </div>
-              <div class="product">
-                <div class="product_main">
-                  <label for="3" class="checkbox_container">
-                    <input type="checkbox" name="" id="3" />
-                    <span class="checkmark"></span>
-                  </label>
-
-                  <label for="3">
-                    <img
-                      src="https://cdn.shopify.com/s/files/1/0048/0031/5427/products/2019-New-Jackets-Parka-Men-Hot-Sale-Quality-Autumn-Winter-Warm-Outwear-Brand-Slim-Mens-Coats.jpg_640x640_6a7cbfee-74c1-4cf0-8a95-e94717f64531.jpg?v=1596813582&width=550%20550w,//cdn.shopify.com/s/files/1/0048/0031/5427/products/2019-New-Jackets-Parka-Men-Hot-Sale-Quality-Autumn-Winter-Warm-Outwear-Brand-Slim-Mens-Coats.jpg_640x640_6a7cbfee-74c1-4cf0-8a95-e94717f64531.jpg?v=1596813582%20640w"
-                      alt=""
-                    />
-                    <div class="product_main-body">
-                      <span class="product_main-body-name"
-                        >2019 New Fashion Men Hoodies Suits Brand Tracksuit
-                        Men/Women Sweatshirts+Sweatpants Autumn Winter Fleece
-                        Hooded Pullover</span
-                      >
-                      <span class="product_main-body-id"
-                        >92b09290b9207261abf32aa234bbc8bf</span
-                      >
-                    </div>
-                  </label>
-                </div>
-                <span class="product_price">$300</span>
+                <span class="product_price">${{product.price}}</span>
               </div>
             </div>
           </div>
@@ -422,8 +55,8 @@
     </div>
   </body>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.14/vue.common.dev.min.js"></script>
-  <script src="./components/header.js"></script>
-  <script src="./components/actions.js"></script>
-  <script src="./components/footer.js"></script>
-  <script src="./main.js"></script>
+  <!-- <script src="./components/header.js"></script> -->
+  <!-- <script src="./components/actions.js"></script> -->
+  <!-- <script src="./components/footer.js"></script> -->
+  <script src="./main.js" type="module"></script>
 </html>

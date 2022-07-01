@@ -1,4 +1,4 @@
-Vue.component("app-footer", {
+export default Vue.component("app-footer", {
   template: ` <footer class="footer">
           <div class="footer_left">
             <button class="prev">
