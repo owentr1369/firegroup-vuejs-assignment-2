@@ -34,11 +34,9 @@ export default Vue.component("app-product", {
               </div>
             </div>
           </div>`,
-  props: ["productList"],
+  props: ["productList", "searchValue"],
   data() {
-    return {
-      header: "Add product",
-    };
+    return {};
   },
   methods: {
     addToSeleted: function (e) {

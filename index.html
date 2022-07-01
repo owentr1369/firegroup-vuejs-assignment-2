@@ -14,8 +14,11 @@
           <app-header></app-header>
         </header>
         <section class="body">
-          <app-actions></app-actions>
-          <app-product :product-list="productList"></app-product>
+          <app-actions v-model="searchValue"></app-actions>
+          <app-product
+            :product-list="productList"
+            :search-value="searchValue"
+          ></app-product>
         </section>
       </div>
       <app-footer></app-footer>

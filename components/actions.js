@@ -6,7 +6,8 @@ export default Vue.component("app-actions", {
                 type="text"
                 placeholder="Search product by name, tag, id..."
                 class="actions_search-input"
-                v-model="searchValue"
+                v-bind:value="value" 
+                v-on:input="updateValue($event.target.value)"
               />
             </div>
             <div class="actions_sort">
@@ -18,9 +19,13 @@ export default Vue.component("app-actions", {
               <img class="actions_sort-arrow" src="./assets/svg/sort.svg" alt="" />
             </div>
           </div>`,
+  props: { value: String },
   data() {
-    return {
-      searchValue: "",
-    };
+    return {};
+  },
+  methods: {
+    updateValue: function (value) {
+      this.$emit("input", value);
+    },
   },
 });

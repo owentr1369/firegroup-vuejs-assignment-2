@@ -7,6 +7,7 @@ var app = new Vue({
   el: "#app",
   data: {
     productList: [],
+    searchValue: "hello",
   },
   components: { AppActions, AppHeader, AppFooter, AppProduct },
   created: function () {
