@@ -6,19 +6,21 @@ export default Vue.component("app-actions", {
                 type="text"
                 placeholder="Search product by name, tag, id..."
                 class="actions_search-input"
+                v-model="searchValue"
               />
             </div>
             <div class="actions_sort">
-              <label class="actions_sort-label" for="">Sort:</label>
-              <select class="actions_sort-select" name="" id="">
+              <label class="actions_sort-label" for="select">Sort:</label>
+              <select class="actions_sort-select" name="" id="select">
                 <option value="atoz" selected>Product title A - Z</option>
                 <option value="ztoa">Product title Z - A</option>
               </select>
               <img class="actions_sort-arrow" src="./assets/svg/sort.svg" alt="" />
             </div>
           </div>`,
-
   data() {
-    return {};
+    return {
+      searchValue: "",
+    };
   },
 });

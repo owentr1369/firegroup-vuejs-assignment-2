@@ -1,5 +1,6 @@
 import AppActions from "./components/actions.js";
 import AppHeader from "./components/header.js";
+import AppProduct from "./components/product.js";
 import AppFooter from "./components/footer.js";
 
 var app = new Vue({
@@ -7,13 +8,12 @@ var app = new Vue({
   data: {
     productList: [],
   },
-  components: { AppActions, AppHeader, AppFooter },
+  components: { AppActions, AppHeader, AppFooter, AppProduct },
   created: function () {
     fetch("./data.json")
       .then((response) => response.json())
       .then((data) => {
         this.productList = data;
-        console.log("this.productList :>> ", this.productList);
       });
   },
 });

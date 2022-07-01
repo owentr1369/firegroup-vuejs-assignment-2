@@ -15,48 +15,12 @@
         </header>
         <section class="body">
           <app-actions></app-actions>
-          <div class="products">
-            <div class="products_header">
-              <div class="products_header-all">
-                <input type="checkbox" id="" />
-                <span>Product</span>
-              </div>
-              <span class="products_header-price">Price</span>
-            </div>
-            <div class="products_list">
-              <div
-                v-for="product in productList"
-                :key="product.id"
-                class="product"
-              >
-                <div class="product_main">
-                  <label :for="product.id" class="checkbox_container">
-                    <input type="checkbox" name="" :id="product.id" />
-                    <span class="checkmark"></span>
-                  </label>
-
-                  <label :for="product.id">
-                    <img :src="product.image" :alt="product.name" />
-                    <div class="product_main-body">
-                      <span class="product_main-body-name"
-                        >{{product.name}}</span
-                      >
-                      <span class="product_main-body-id">{{product.id}}</span>
-                    </div>
-                  </label>
-                </div>
-                <span class="product_price">${{product.price}}</span>
-              </div>
-            </div>
-          </div>
+          <app-product :product-list="productList"></app-product>
         </section>
       </div>
       <app-footer></app-footer>
     </div>
   </body>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.14/vue.common.dev.min.js"></script>
-  <!-- <script src="./components/header.js"></script> -->
-  <!-- <script src="./components/actions.js"></script> -->
-  <!-- <script src="./components/footer.js"></script> -->
   <script src="./main.js" type="module"></script>
 </html>
