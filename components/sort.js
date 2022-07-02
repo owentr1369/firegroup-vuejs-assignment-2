@@ -21,13 +21,4 @@ export default Vue.component("app-sort", {
       this.$emit("input", value);
     },
   },
-  watch: {
-    value() {
-      if (this.value === "true") {
-        this.value = true;
-      } else {
-        this.value = false;
-      }
-    },
-  },
 });

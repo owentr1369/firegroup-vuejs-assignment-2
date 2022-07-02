@@ -9,6 +9,7 @@ export default Vue.component("app-actions", {
                 v-on:input="updateValue($event.target.value)"
               />
             </div>
+            </div>
           `,
   props: { value: String },
   data() {

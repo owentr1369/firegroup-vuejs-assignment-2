@@ -23,7 +23,7 @@ var app = new Vue({
     aToZSort() {
       if (this.aToZSort === "true") {
         this.aToZSort = true;
-      } else {
+      } else if (this.aToZSort === "false") {
         this.aToZSort = false;
       }
     },

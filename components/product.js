@@ -9,7 +9,7 @@ export default Vue.component("app-product", {
             </div>
             <div class="products_list">
               <div
-                v-for="product in newList"
+                v-for="product in productList"
                 :key="product.id"
                 class="product"
                 @click="addToSeleted"
@@ -34,7 +34,7 @@ export default Vue.component("app-product", {
               </div>
             </div>
           </div>`,
-  props: ["productList", "searchValue", "aToZSort"],
+  props: { productList: Array, searchValue: String, aToZSort: Boolean },
   data() {
     return {
       newList: [],
@@ -48,9 +48,10 @@ export default Vue.component("app-product", {
   },
   watch: {
     searchValue() {
-      if (this.searchValue.length >= 1) {
+      console.log("this.searchValue :>> ", this.searchValue);
+      if (this.searchValue.length > 0) {
         this.isSearching = true;
-        this.newList = this.productList.filter((product) => {
+        this.productList = this.productList.filter((product) => {
           return (
             product.name
               .toLowerCase()
@@ -58,6 +59,17 @@ export default Vue.component("app-product", {
             product.id.includes(this.searchValue.toLowerCase())
           );
         });
+      }
+    },
+    aToZSort() {
+      if (this.aToZSort == true) {
+        this.productList = this.productList.sort((a, b) =>
+          a.name.localeCompare(b.name)
+        );
+      } else if (this.aToZSort == false) {
+        this.productList = this.productList
+          .sort((a, b) => a.name.localeCompare(b.name))
+          .reverse();
       }
     },
   },
