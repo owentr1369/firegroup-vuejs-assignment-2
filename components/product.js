@@ -9,7 +9,7 @@ export default Vue.component("app-product", {
             </div>
             <div class="products_list">
               <div
-                v-for="product in productList.slice(firstPage,lastPage)"
+                v-for="(product, index) in productList.slice(firstItemIndex,lastItemIndex)"
                 :key="product.id"
                 class="product"
                 @click="addToSeleted"
@@ -26,6 +26,7 @@ export default Vue.component("app-product", {
                       <span class="product_main-body-name"
                         >{{product.name}}</span
                       >
+                      <h1>{{index}}</h1>
                       <span class="product_main-body-id">{{product.id}}</span>
                     </div>
                   </label>
@@ -34,14 +35,19 @@ export default Vue.component("app-product", {
               </div>
             </div>
           </div>`,
-  props: { productList: Array, searchValue: String, aToZSort: Boolean },
+  props: {
+    productList: Array,
+    searchValue: String,
+    aToZSort: Boolean,
+    currentPage: Number,
+  },
   data() {
     return {
       newList: [],
       isSearching: false,
       maxPage: "",
-      firstPage: 0,
-      lastPage: 9,
+      firstItemIndex: 0,
+      lastItemIndex: 10,
     };
   },
   methods: {
@@ -78,6 +84,10 @@ export default Vue.component("app-product", {
     productList() {
       this.maxPage = Math.ceil(this.productList.length / 10);
       console.log("this.maxPage :>> ", this.maxPage);
+    },
+    currentPage() {
+      this.firstItemIndex = (this.currentPage - 1) * 10;
+      this.lastItemIndex = this.currentPage * 10;
     },
   },
 });
