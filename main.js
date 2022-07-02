@@ -10,8 +10,10 @@ var app = new Vue({
     productList: [],
     searchValue: "",
     aToZSort: true,
+    currentPage: 1,
   },
   components: { AppActions, AppHeader, AppFooter, AppProduct, AppSort },
+
   created: async function () {
     await fetch("./data.json")
       .then((response) => response.json())

@@ -9,7 +9,7 @@ export default Vue.component("app-product", {
             </div>
             <div class="products_list">
               <div
-                v-for="product in productList"
+                v-for="product in productList.slice(firstPage,lastPage)"
                 :key="product.id"
                 class="product"
                 @click="addToSeleted"
@@ -39,6 +39,9 @@ export default Vue.component("app-product", {
     return {
       newList: [],
       isSearching: false,
+      maxPage: "",
+      firstPage: 0,
+      lastPage: 9,
     };
   },
   methods: {
@@ -71,6 +74,10 @@ export default Vue.component("app-product", {
           .sort((a, b) => a.name.localeCompare(b.name))
           .reverse();
       }
+    },
+    productList() {
+      this.maxPage = Math.ceil(this.productList.length / 10);
+      console.log("this.maxPage :>> ", this.maxPage);
     },
   },
 });
