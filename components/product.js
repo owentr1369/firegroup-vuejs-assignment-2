@@ -1,7 +1,7 @@
 export default Vue.component("app-product", {
   template: ` <div class="products">
-            <div class="products_header">
-              <div class="products_header-all">
+                <div class="products_header">
+                  <div class="products_header-all">
                 <input type="checkbox" id="" />
                 <span>Product</span>
               </div>
@@ -34,10 +34,11 @@ export default Vue.component("app-product", {
               </div>
             </div>
           </div>`,
-  props: ["productList", "searchValue"],
+  props: ["productList", "searchValue", "aToZSort"],
   data() {
     return {
       newList: [],
+      isSearching: false,
     };
   },
   methods: {
@@ -47,12 +48,17 @@ export default Vue.component("app-product", {
   },
   watch: {
     searchValue() {
-      this.newList = this.productList.filter((product) => {
-        return (
-          product.name.toLowerCase().includes(this.searchValue.toLowerCase()) ||
-          product.id.includes(this.searchValue.toLowerCase())
-        );
-      });
+      if (this.searchValue.length >= 1) {
+        this.isSearching = true;
+        this.newList = this.productList.filter((product) => {
+          return (
+            product.name
+              .toLowerCase()
+              .includes(this.searchValue.toLowerCase()) ||
+            product.id.includes(this.searchValue.toLowerCase())
+          );
+        });
+      }
     },
   },
 });

@@ -14,10 +14,14 @@
           <app-header></app-header>
         </header>
         <section class="body">
-          <app-actions v-model="searchValue"></app-actions>
+          <div class="actions-wrapper">
+            <app-actions v-model="searchValue"></app-actions>
+            <app-sort v-model="aToZSort"></app-sort>
+          </div>
           <app-product
             :product-list="productList"
             :search-value="searchValue"
+            :a-to-z-sort="aToZSort"
           ></app-product>
         </section>
       </div>
