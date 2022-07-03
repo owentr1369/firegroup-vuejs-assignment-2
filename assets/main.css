@@ -156,7 +156,7 @@
           transform: translate(-50%, -50%);
 }
 
-.products_header-all span {
+.products_header-all label {
   font-weight: 700;
   font-size: 14px;
   line-height: 24px;
@@ -386,6 +386,30 @@
   color: #fff;
   background-color: #f65e5d;
   border: 1px solid #f65e5d;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 4px;
+  margin-left: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 5px #fccfce;
+          box-shadow: inset 0 0 5px #fccfce;
+  border-radius: 2px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #f65e5d;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #f65e5d;
 }
 
 * {

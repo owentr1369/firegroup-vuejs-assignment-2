@@ -2,10 +2,10 @@ export default Vue.component("app-product", {
   template: ` <div class="products">
                 <div class="products_header">
                   <div class="products_header-all">
-                <input type="checkbox" v-model="hasProducts" :checked="selectedProducts.length>0"/>
-                <span v-if="selectedProducts.length==0">Product</span>
-                      <span v-else-if="selectedProducts.length==1">1 Product seleted</span>
-                            <span v-else>{{selectedProducts.length}} Products selected</span>
+                <input id="numberSelected" type="checkbox" v-model="hasProducts" :checked="selectedProducts.length>0"/>
+                <label for="numberSelected" v-if="selectedProducts.length==0">Product</label>
+                      <label for="numberSelected" v-else-if="selectedProducts.length==1">1 Product seleted</label>
+                            <label for="numberSelected" v-else>{{selectedProducts.length}} Products selected</label>
                 
               </div>
               <span class="products_header-price">Price</span>
@@ -187,11 +187,14 @@ export default Vue.component("app-product", {
     },
     hasProducts() {
       if (this.hasProducts == false) {
-        if (this.selectedProducts.length > 0) {
-          this.productList.forEach((item) => {
-            document.getElementById(String(item.id)).checked = false;
-          });
-        }
+        // if (this.selectedProducts.length > 0) {
+        //   this.productList.forEach((item) => {
+        //     document.getElementById(String(item.id)).checked = false;
+        //   });
+        // }
+        this.selectedProducts = [];
+      } else {
+        console.log("true");
       }
     },
   },
