@@ -2,8 +2,11 @@ export default Vue.component("app-product", {
   template: ` <div class="products">
                 <div class="products_header">
                   <div class="products_header-all">
-                <input type="checkbox" id="" />
-                <span>Product</span>
+                <input type="checkbox" v-model="hasProducts" :checked="selectedProducts.length>0"/>
+                <span v-if="selectedProducts.length==0">Product</span>
+                      <span v-else-if="selectedProducts.length==1">1 Product seleted</span>
+                            <span v-else>{{selectedProducts.length}} Products selected</span>
+                
               </div>
               <span class="products_header-price">Price</span>
             </div>
@@ -26,7 +29,6 @@ export default Vue.component("app-product", {
                       <span class="product_main-body-name"
                         >{{product.name}}</span
                       >
-                      <h1>{{index}}</h1>
                       <span class="product_main-body-id">{{product.id}}</span>
                     </div>
                   </label>
@@ -45,8 +47,8 @@ export default Vue.component("app-product", {
               </button>
             </div>
             <div class="footer_right">
-              <button class="cancel">Cancel</button>
-              <button class="save">Save</button>
+              <button class="cancel" @click="cancel">Cancel</button>
+              <button class="save" @click="save">Save</button>
             </div>
           </div>
           </div>
@@ -58,7 +60,6 @@ export default Vue.component("app-product", {
   },
   data() {
     return {
-      newList: [],
       isSearching: false,
       maxPage: "",
       firstItemIndex: 0,
@@ -66,11 +67,28 @@ export default Vue.component("app-product", {
       currentPage: 1,
       stopNext: false,
       stopPrev: true,
+      selectedProducts: [],
+      hasProducts: false,
     };
   },
   methods: {
     addToSeleted: function (e) {
-      console.log(e);
+      let selectedId = e.target.id;
+      if (selectedId !== "") {
+        this.selectedProducts.push(selectedId);
+        if (
+          this.selectedProducts.filter(
+            (dupliProduct) => dupliProduct == selectedId
+          ).length == 2
+          // Find duplicated ID that need to be removed
+        ) {
+          this.selectedProducts = this.selectedProducts.filter(
+            (dupliProduct) => dupliProduct !== selectedId
+          );
+          // Remove unchecked product ID
+          console.log("this.selectedProducts :>> ", this.selectedProducts);
+        }
+      }
     },
     prevPage: function () {
       this.currentPage--;
@@ -78,6 +96,30 @@ export default Vue.component("app-product", {
     nextPage: function () {
       this.currentPage++;
     },
+    cancel: function () {
+      console.log("Cancel");
+    },
+    save: function () {
+      console.log("Save");
+      localStorage.setItem(
+        "selectedProducts",
+        JSON.stringify(this.selectedProducts)
+      );
+    },
+  },
+  created() {
+    this.selectedProducts =
+      JSON.parse(localStorage.getItem("selectedProducts")) || [];
+  },
+  mounted() {
+    this.selectedProducts.forEach((item) => {
+      setTimeout(function () {
+        document.getElementById(String(item)).checked = true;
+      }, 100);
+    });
+    if (this.selectedProducts.length > 0) {
+      this.countedProducts = true;
+    }
   },
   watch: {
     searchValue() {
@@ -121,6 +163,22 @@ export default Vue.component("app-product", {
         this.stopPrev = false;
       } else if (this.currentPage <= 1) {
         this.stopPrev = true;
+      }
+    },
+    selectedProducts() {
+      if (this.selectedProducts.length > 0) {
+        this.hasProducts = true;
+      } else {
+        this.hasProducts = false;
+      }
+    },
+    hasProducts() {
+      if (this.hasProducts == false) {
+        if (this.selectedProducts.length > 0) {
+          this.productList.forEach((item) => {
+            document.getElementById(String(item.id)).checked = false;
+          });
+        }
       }
     },
   },
