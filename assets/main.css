@@ -407,11 +407,6 @@
   border-radius: 10px;
 }
 
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-  background: #f65e5d;
-}
-
 * {
   margin: 0;
   padding: 0;
