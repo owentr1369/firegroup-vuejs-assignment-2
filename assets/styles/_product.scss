@@ -48,7 +48,8 @@
   }
   &_list {
     height: calc(100vh - 267px);
-    overflow: scroll;
+    overflow-y: hidden auto;
+    overflow-x: hidden;
     .product {
       margin-top: 19px;
       padding-bottom: 16px;

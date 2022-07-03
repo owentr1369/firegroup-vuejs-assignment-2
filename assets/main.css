@@ -170,7 +170,8 @@
 
 .products_list {
   height: calc(100vh - 267px);
-  overflow: scroll;
+  overflow-y: hidden auto;
+  overflow-x: hidden;
 }
 
 .products_list .product {
