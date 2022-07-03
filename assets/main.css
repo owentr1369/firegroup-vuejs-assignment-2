@@ -363,6 +363,11 @@
   padding-left: 12px;
 }
 
+.footer_left .active {
+  color: #1c1c28;
+  border-color: #1c1c28;
+}
+
 .footer_right button {
   padding: 8px 32px;
   border-radius: 3px;

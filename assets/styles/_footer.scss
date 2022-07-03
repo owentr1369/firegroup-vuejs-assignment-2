@@ -37,6 +37,10 @@
         padding-left: 12px;
       }
     }
+    .active {
+      color: $heading-color;
+      border-color: $heading-color;
+    }
   }
   &_right {
     button {

@@ -2,7 +2,6 @@ import AppActions from "./components/actions.js";
 import AppHeader from "./components/header.js";
 import AppSort from "./components/sort.js";
 import AppProduct from "./components/product.js";
-import AppFooter from "./components/footer.js";
 
 var app = new Vue({
   el: "#app",
@@ -10,9 +9,8 @@ var app = new Vue({
     productList: [],
     searchValue: "",
     aToZSort: true,
-    currentPage: 1,
   },
-  components: { AppActions, AppHeader, AppFooter, AppProduct, AppSort },
+  components: { AppActions, AppHeader, AppProduct, AppSort },
 
   created: async function () {
     await fetch("./data.json")
@@ -20,6 +18,12 @@ var app = new Vue({
       .then((data) => {
         this.productList = data;
       });
+  },
+
+  methods: {
+    onUpdateCurrentPage(newValue) {
+      this.currentPage = newValue;
+    },
   },
   watch: {
     aToZSort() {
