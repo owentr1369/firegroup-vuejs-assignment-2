@@ -187,14 +187,28 @@ export default Vue.component("app-product", {
     },
     hasProducts() {
       if (this.hasProducts == false) {
-        // if (this.selectedProducts.length > 0) {
-        //   this.productList.forEach((item) => {
-        //     document.getElementById(String(item.id)).checked = false;
-        //   });
-        // }
+        async function removeItems(arr) {
+          return await arr.map((item) => {
+            return (document.getElementById(String(item)).checked = false);
+          });
+        }
+        this.selectedProducts = removeItems(this.selectedProducts);
         this.selectedProducts = [];
+        console.log("this.selectedProducts :>> ", this.selectedProducts);
+        // this.selectedProducts = [];
+        // this.selectedProducts.forEach((item) => {
+        //   document.getElementById(String(item)).checked = false;
+        // });
       } else {
         console.log("true");
+        if (this.selectedProducts.length == 0) {
+          this.productList.forEach((item) => {
+            this.selectedProducts.push(item.id);
+          });
+          this.selectedProducts.forEach((item) => {
+            document.getElementById(String(item)).checked = true;
+          });
+        }
       }
     },
   },
