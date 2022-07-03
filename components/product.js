@@ -86,7 +86,6 @@ export default Vue.component("app-product", {
             (dupliProduct) => dupliProduct !== selectedId
           );
           // Remove unchecked product ID
-          console.log("this.selectedProducts :>> ", this.selectedProducts);
         }
       }
     },
@@ -100,7 +99,7 @@ export default Vue.component("app-product", {
       console.log("Cancel");
     },
     save: function () {
-      console.log("Save");
+      console.log("Saved");
       localStorage.setItem(
         "selectedProducts",
         JSON.stringify(this.selectedProducts)
@@ -117,7 +116,7 @@ export default Vue.component("app-product", {
       this.selectedProducts.forEach((item) => {
         setTimeout(function () {
           document.getElementById(String(item)).checked = true;
-        }, 100);
+        }, 10);
       });
     }
 
@@ -128,7 +127,6 @@ export default Vue.component("app-product", {
   },
   watch: {
     searchValue() {
-      console.log("this.searchValue :>> ", this.searchValue);
       if (this.searchValue.length > 0) {
         this.isSearching = true;
         this.productList = this.productList.filter((product) => {
@@ -140,6 +138,11 @@ export default Vue.component("app-product", {
           );
         });
       }
+      this.selectedProducts.forEach((item) => {
+        setTimeout(function () {
+          document.getElementById(String(item)).checked = true;
+        }, 10);
+      });
     },
     aToZSort() {
       if (this.aToZSort == true) {
@@ -154,7 +157,6 @@ export default Vue.component("app-product", {
     },
     productList() {
       this.maxPage = Math.ceil(this.productList.length / 10);
-      console.log("this.maxPage :>> ", this.maxPage);
     },
     currentPage() {
       this.firstItemIndex = (this.currentPage - 1) * 10;
@@ -174,7 +176,7 @@ export default Vue.component("app-product", {
         this.selectedProducts.forEach((item) => {
           setTimeout(function () {
             document.getElementById(String(item)).checked = true;
-          }, 100);
+          }, 10);
         });
       }
     },
@@ -194,13 +196,7 @@ export default Vue.component("app-product", {
         }
         this.selectedProducts = removeItems(this.selectedProducts);
         this.selectedProducts = [];
-        console.log("this.selectedProducts :>> ", this.selectedProducts);
-        // this.selectedProducts = [];
-        // this.selectedProducts.forEach((item) => {
-        //   document.getElementById(String(item)).checked = false;
-        // });
       } else {
-        console.log("true");
         if (this.selectedProducts.length == 0) {
           this.productList.forEach((item) => {
             this.selectedProducts.push(item.id);
