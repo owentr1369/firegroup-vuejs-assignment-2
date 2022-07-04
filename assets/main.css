@@ -105,7 +105,6 @@
 }
 
 .products_header {
-  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -115,6 +114,7 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  width: 100%;
   padding-bottom: 10px;
   border-bottom: 1px solid #ebebf0;
 }
@@ -144,8 +144,8 @@
 }
 
 .products_header-all input[type="checkbox"]:checked::after {
-  content: "";
   position: absolute;
+  content: "";
   width: 10px;
   height: 2.5px;
   border-radius: 1px;
@@ -169,15 +169,12 @@
 }
 
 .products_list {
-  height: calc(100vh - 267px);
+  height: calc(100vh - 252px);
   overflow-y: hidden auto;
   overflow-x: hidden;
 }
 
 .products_list .product {
-  margin-top: 19px;
-  padding-bottom: 16px;
-  border-bottom: 1px solid #ebebf0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -187,27 +184,32 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  margin-top: 19px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #ebebf0;
 }
 
 .products_list .product_main {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 62%;
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
+  width: 62%;
 }
 
 .products_list .product_main .checkbox_container {
+  position: relative;
   margin-right: 10px;
   min-width: 16px;
   max-width: 16px;
-  position: relative;
 }
 
 .products_list .product_main .checkbox_container input {
   -webkit-appearance: none;
+  -moz-appearance: none;
+       appearance: none;
 }
 
 .products_list .product_main .checkbox_container .checkmark {
@@ -225,8 +227,8 @@
 }
 
 .products_list .product_main .checkbox_container .checkmark::after {
-  content: "";
   position: absolute;
+  content: "";
   top: 3px;
   left: 5px;
   width: 3px;
@@ -252,19 +254,19 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin-right: 10px;
   width: 100%;
   max-width: 800px;
+  margin-right: 10px;
 }
 
 .products_list .product_main label img {
   width: 40px;
   height: 40px;
+  margin-right: 10px;
   -o-object-fit: cover;
      object-fit: cover;
   border-radius: 3px;
   border: 1px solid #ebebf0;
-  margin-right: 10px;
 }
 
 .products_list .product_main-body {
@@ -272,21 +274,21 @@
 }
 
 .products_list .product_main-body-name {
-  width: 100%;
   display: block;
+  width: 100%;
+  margin-bottom: 2px;
   white-space: nowrap;
-  overflow: hidden;
   text-overflow: ellipsis;
   font-weight: 400;
   font-size: 14px;
   line-height: 24px;
   color: #1c1c28;
-  margin-bottom: 2px;
+  overflow: hidden;
 }
 
 .products_list .product_main-body-id {
-  width: 100%;
   display: block;
+  width: 100%;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;

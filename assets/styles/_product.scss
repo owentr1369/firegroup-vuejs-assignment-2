@@ -1,10 +1,10 @@
 .products {
   width: 100%;
   &_header {
-    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 100%;
     padding-bottom: 10px;
     border-bottom: 1px solid $border-color;
     &-all {
@@ -22,8 +22,8 @@
           background-color: $main-color;
           border: none;
           &::after {
-            content: "";
             position: absolute;
+            content: "";
             width: 10px;
             height: 2.5px;
             border-radius: 1px;
@@ -47,27 +47,28 @@
     }
   }
   &_list {
-    height: calc(100vh - 267px);
+    height: calc(100vh - 252px);
     overflow-y: hidden auto;
     overflow-x: hidden;
     .product {
-      margin-top: 19px;
-      padding-bottom: 16px;
-      border-bottom: 1px solid $border-color;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      margin-top: 19px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid $border-color;
       &_main {
         display: flex;
-        width: 62%;
         justify-content: flex-start;
+        width: 62%;
         .checkbox_container {
+          position: relative;
           margin-right: 10px;
           min-width: 16px;
           max-width: 16px;
-          position: relative;
           input {
             -webkit-appearance: none;
+            appearance: none;
           }
           .checkmark {
             content: "";
@@ -81,8 +82,8 @@
             border-radius: $border-radius;
             z-index: 2;
             &::after {
-              content: "";
               position: absolute;
+              content: "";
               top: 3px;
               left: 5px;
               width: 3px;
@@ -105,35 +106,35 @@
 
         label {
           display: flex;
-          margin-right: 10px;
           width: 100%;
           max-width: 800px;
+          margin-right: 10px;
           img {
             width: 40px;
             height: 40px;
+            margin-right: 10px;
             object-fit: cover;
             border-radius: $border-radius;
             border: 1px solid $border-color;
-            margin-right: 10px;
           }
         }
         &-body {
           width: 100%;
           &-name {
-            width: 100%;
             display: block;
+            width: 100%;
+            margin-bottom: 2px;
             white-space: nowrap;
-            overflow: hidden;
             text-overflow: ellipsis;
             font-weight: 400;
             font-size: 14px;
             line-height: 24px;
             color: $productname-color;
-            margin-bottom: 2px;
+            overflow: hidden;
           }
           &-id {
-            width: 100%;
             display: block;
+            width: 100%;
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
